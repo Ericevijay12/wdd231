@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chamber Directory - Nigerian Churches</title>
+  <meta name="description" content="Directory of Nigerian churches for the Chamber of Commerce project.">
+  <meta name="author" content="Eric Evijay Ohiani">
+  <meta name="keywords" content="Nigerian churches, church directory, Lagos churches, Nigeria">
+  <!-- Facebook Meta Tags -->
+  <meta property="og:title" content="Nigerian Churches Directory">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://example.com/path-to-your-image.jpg">
+  <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/directory.html">
+  <!-- Favicon Links -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/site.webmanifest">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/styles.css">
+  <!-- JavaScript -->
+  <script defer src="scripts/script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Nigerian Churches Directory</h1>
+    <nav>
+      <button id="menuButton" aria-label="Toggle navigation menu">&#9776;</button>
+      <ul id="navMenu">
+        <li><a href="#" aria-label="Home">Home</a></li>
+        <li><a href="#" aria-label="About">About</a></li>
+        <li><a href="#" aria-label="Directory">Directory</a></li>
+        <li><a href="#" aria-label="Contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="controls">
+      <input type="text" id="search" placeholder="Search churches..." aria-label="Search churches" />
+      <select id="sort" aria-label="Sort churches">
+        <option value="name">Sort by Name</option>
+        <option value="location">Sort by Location</option>
+        <option value="membershipLevel">Sort by Membership Level</option>
+      </select>
+    </section>
+    <section class="view-toggle">
+      <button id="gridView" class="active">Grid</button>
+      <button id="listView">List</button>
+    </section>
+    <section id="directory" class="grid">
+      <!-- Content populated by JavaScript -->
+    </section>
+  </main>
+  <footer>
+    <p>&copy; <span id="copyrightYear"></span> Nigerian Churches Directory | Eric Evijay Ohiani | WDD 231</p>
+    <p>Contact: eric.ohiani@example.com | Phone: +123-456-7890</p>
+    <p>Last Updated: <span id="lastModified"></span></p>
+  </footer>
+</body>
+</html>
