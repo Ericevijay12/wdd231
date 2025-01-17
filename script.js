@@ -7,12 +7,14 @@ function updateLastUpdateTime() {
 
 updateLastUpdateTime(); // Initial call
 
-// Smooth Scrolling for Navigation Links
+// Smooth Scrolling for Navigation Links (excluding LinkedIn)
 document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
+  if (!anchor.getAttribute('href').startsWith('http')) { // Exclude external links
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
     });
-  });
+  }
 });
