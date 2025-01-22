@@ -1,0 +1,26 @@
+[
+    {
+      "name": "Redeemed Christian Church of God",
+      "location": "Lagos, Nigeria",
+      "phone": "+234-123-4567",
+      "details": "https://www.rccg.org",
+      "image": "images/logo1.png",
+      "membershipLevel": 3
+    },
+    {
+      "name": "Living Faith Church Worldwide",
+      "location": "Ota, Ogun State, Nigeria",
+      "phone": "+234-234-5678",
+      "details": "https://www.faithtabernacle.org.ng",
+      "image": "images/logo2.png",
+      "membershipLevel": 2
+    },
+    {
+      "name": "Mountain of Fire and Miracles Ministries",
+      "location": "Yaba, Lagos, Nigeria",
+      "phone": "+234-345-6789",
+      "details": "https://www.mountainoffire.org",
+      "image": "images/logo3.png",
+      "membershipLevel": 1
+    }
+  ]
