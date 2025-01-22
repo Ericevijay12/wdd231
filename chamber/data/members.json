@@ -2,81 +2,25 @@
     {
       "name": "Redeemed Christian Church of God",
       "location": "Lagos, Nigeria",
-      "established": 1952,
+      "phone": "+234-123-4567",
       "details": "https://www.rccg.org",
-      "image": "https://www.rccg.org/wp-content/uploads/2020/11/rccg-for-web.png",
+      "image": "images/logo1.png",
       "membershipLevel": 3
     },
     {
       "name": "Living Faith Church Worldwide",
       "location": "Ota, Ogun State, Nigeria",
-      "established": 1981,
+      "phone": "+234-234-5678",
       "details": "https://www.faithtabernacle.org.ng",
-      "image": "https://i.postimg.cc/KjJHq5D4/Winnerschapellogo.gif",
+      "image": "images/logo2.png",
       "membershipLevel": 2
     },
     {
       "name": "Mountain of Fire and Miracles Ministries",
       "location": "Yaba, Lagos, Nigeria",
-      "established": 1989,
+      "phone": "+234-345-6789",
       "details": "https://www.mountainoffire.org",
-      "image": "https://i.postimg.cc/KzbpmW9R/download.jpg",
+      "image": "images/logo3.png",
       "membershipLevel": 1
-    },
-    {
-      "name": "Christ Embassy",
-      "location": "Lagos, Nigeria",
-      "established": 1987,
-      "details": "https://www.christembassy.org",
-      "image": "https://i.postimg.cc/VsGgh5cS/download.jpg",
-      "membershipLevel": 3
-    },
-    {
-      "name": "Deeper Christian Life Ministry",
-      "location": "Gbagada, Lagos, Nigeria",
-      "established": 1973,
-      "details": "https://www.dclm.org",
-      "image": "https://i.postimg.cc/7Z7NbVJ7/download.jpg",
-      "membershipLevel": 2
-    },
-    {
-      "name": "Dunamis International Gospel Centre",
-      "location": "Abuja, Nigeria",
-      "established": 1996,
-      "details": "https://www.dunamisgospel.org",
-      "image": "https://i.postimg.cc/h458rw9T/download.jpg",
-      "membershipLevel": 1
-    },
-    {
-      "name": "Synagogue Church of All Nations",
-      "location": "Ikotun, Lagos, Nigeria",
-      "established": 1987,
-      "details": "https://www.scoan.org",
-      "image": "https://i.postimg.cc/Gm8cZXgW/download.jpg",
-      "membershipLevel": 3
-    },
-    {
-      "name": "House on the Rock",
-      "location": "Lagos, Nigeria",
-      "established": 1994,
-      "details": "https://www.houseontherock.org.ng",
-      "image": "https://i.postimg.cc/hjrg96hd/download.png",
-      "membershipLevel": 2
-    },
-    {
-      "name": "Daystar Christian Centre",
-      "location": "Ikeja, Lagos, Nigeria",
-      "established": 1995,
-      "details": "https://www.daystarng.org",
-      "image": "https://i.postimg.cc/SQgkRBB0/download.png",
-      "membershipLevel": 1
-    },
-    {
-      "name": "Foursquare Gospel Church",
-      "location": "Yaba, Lagos, Nigeria",
-      "established": 1955,
-      "details": "https://www.foursquare.org.ng",
-      "image": "https://i.postimg.cc/zXLZBVwW/download.png",
-      "membershipLevel": 3
     }
   ]
