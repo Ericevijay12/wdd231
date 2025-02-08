@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Churches | Alma Jemela Chamber of Commerce</title>
+  <meta name="description" content="Discover Churches page for the Alma Jemela Chamber of Commerce.">
+  <meta name="author" content="Eric Evijay Ohiani">
+  
+  <!-- Facebook Meta Tags -->
+  <meta property="og:title" content="Alma Jemela Chamber of Commerce">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://example.com/path-to-your-image.jpg">
+  <meta property="og:url" content="https://ericevijay12.github.io/wdd231/chamber/">
+  
+  <!-- Favicon Links -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/site.webmanifest">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  
+  <!-- Global CSS (Normalize and header/footer design) -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <!-- Discovery Page Specific CSS -->
+  <link rel="stylesheet" href="styles/discover.css">
+  
+  <!-- Discovery Page JavaScript -->
+  <script defer src="scripts/discover.js"></script>
+</head>
+<body>
+  <!-- Floating Animation Background -->
+  <div class="floating-background">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  
+  <!-- Header (using your seamless design and colors) -->
+  <header>
+    <h1>Alma Jemela Chamber of Commerce</h1>
+    <nav>
+      <button id="menuButton" aria-label="Toggle navigation menu">&#9776;</button>
+      <ul id="navMenu">
+        <li><a href="index.html" aria-label="Home">Home</a></li>
+        <li><a href="about.html" aria-label="About">About</a></li>
+        <li><a href="directory.html" aria-label="Directory">Directory</a></li>
+        <li><a href="contact.html" aria-label="Contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Main Content Area with Sidebar for Visitor Message -->
+  <main>
+    <!-- The .content-wrapper arranges the sidebar and main discovery content -->
+    <div class="content-wrapper">
+      <!-- Sidebar: Visitor message injected via JavaScript -->
+      <aside class="sidebar">
+        <div id="visit-message"></div>
+      </aside>
+      <!-- Discovery Content -->
+      <section class="discover-main">
+        <h2>Discover Churches</h2>
+        <!-- The grid container will be populated dynamically with church cards -->
+        <div class="grid-container"></div>
+      </section>
+    </div>
+  </main>
+  
+  <!-- Footer (using your seamless design and colors) -->
+  <footer>
+    <p>&copy; <span id="copyrightYear"></span>
+       Alma Jemela Chamber of Commerce | Eric Evijay Ohiani | WDD 231
+    </p>
+    <p>Contact: eric@byupathway.edu | Phone: +123-456-7890</p>
+    <p>Last Updated: <span id="lastModified"></span></p>
+  </footer>
+  
+  <script>
+    // Set copyright year and last modified date.
+    document.getElementById('copyrightYear').textContent =
+      new Date().getFullYear();
+    document.getElementById('lastModified').textContent =
+      document.lastModified;
+  </script>
+</body>
+</html>
