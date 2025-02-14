@@ -1,0 +1,401 @@
+/* ===============================
+   CSS Variables & Base Styles
+================================ */
+:root {
+    --primary-color: #3a7ca5;
+    --secondary-color: #333; /* dark grey */
+    --accent-color: #f9a826;
+    --text-color: #f4f4f4; /* light text */
+    --bg-color: #222; /* dark background */
+    --header-bg: #111;
+    --footer-bg: #111;
+    --btn-bg: var(--primary-color);
+    --btn-text: #fff;
+    --transition-speed: 0.3s;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-color);
+    transition: background var(--transition-speed), color var(--transition-speed);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header & Navigation */
+  header {
+    background: var(--header-bg);
+    color: #fff;
+    padding: 1rem 0;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 0.8rem;
+    transition: background var(--transition-speed);
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    background: var(--accent-color);
+    border-radius: 4px;
+  }
+  
+  /* Dark Mode Toggle Button */
+  #theme-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: url('../images/hero.jpg') no-repeat center center/cover;
+    padding: 4rem 1rem;
+    text-align: center;
+    color: #fff;
+    position: relative;
+  }
+  
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 1.2rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background var(--transition-speed);
+  }
+  
+  .primary-btn {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+  }
+  
+  .primary-btn:hover {
+    background: var(--accent-color);
+  }
+  
+  /* Card Grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  /* Card Styles */
+  .card, .game-card, .popular-game-card {
+    background: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover, .game-card:hover, .popular-game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  }
+  
+  .game-card img, .popular-game-card img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Reviews Section */
+  .reviews {
+    text-align: left;
+    padding: 2rem 0;
+  }
+  
+  .review-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  
+  .review-card {
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  }
+  
+  .review-card blockquote {
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.4;
+  }
+  
+  .review-author {
+    font-weight: 600;
+    text-align: right;
+    margin: 0;
+  }
+  
+  /* Featured Event Section */
+  .featured-event {
+    margin: 2rem 0;
+    text-align: center;
+  }
+  
+  .featured-event-card {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--secondary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .featured-event-card img {
+    width: 100%;
+    max-width: 400px;
+    object-fit: cover;
+  }
+  
+  .featured-event-details {
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  /* Events Info Section */
+  .events-info {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  /* Footer */
+  footer {
+    background: var(--footer-bg);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+  
+  /* Responsive Navigation */
+  @media (max-width: 768px) {
+    .nav-list {
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero {
+      padding: 3rem 1rem;
+    }
+  }
+  
+ /* Firedragon Animation for Game Cards */
+.firedragon {
+    position: relative;
+    width: 30px; 
+    height: 30px;
+    background: url('images/firedragon.png') no-repeat center center;
+    background-size: contain;
+    margin: 1rem auto 0 auto; /* center horizontally, add top margin */
+    animation: flyDragon 3s infinite;
+  }
+  @keyframes flyDragon {
+    0% { transform: translateX(-50%) translateY(0) scale(0.8); opacity: 0; }
+    10% { opacity: 1; }
+    40% { transform: translateX(50%) translateY(-10px) scale(1.1); }
+    45% { transform: translateX(55%) translateY(-10px) scale(1.2); } /* simulate fire breathing moment */
+    50% { transform: translateX(60%) translateY(0) scale(1.1); }
+    60% { transform: translateX(70%) translateY(-5px) scale(1); opacity: 1; }
+    100% { transform: translateX(100%) translateY(0) scale(0.8); opacity: 0; }
+  }
+  
+  /* Optional: Additional fire effect using pseudo-element */
+  .firedragon::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 100%;
+    width: 20px;
+    height: 10px;
+    background: radial-gradient(circle, #ff9900, #ff0000);
+    opacity: 0;
+    animation: breatheFire 3s infinite;
+  }
+  @keyframes breatheFire {
+    0%, 40%, 60%, 100% { opacity: 0; transform: translateX(0); }
+    50% { opacity: 1; transform: translateX(10px); }
+  }
+  
+  /* Modal Styles (if not already included) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-content {
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+  }
+  .close-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color);
+  }
+  
+
+
+  /* Firedragon Animation for Game Cards */
+.firedragon {
+    position: relative;
+    width: 30px; 
+    height: 30px;
+    background: url('images/firedragon.png') no-repeat center center;
+    background-size: contain;
+    margin: 1rem auto 0 auto; /* center horizontally, add top margin */
+    animation: flyDragon 3s infinite;
+  }
+  @keyframes flyDragon {
+    0% { transform: translateX(-50%) translateY(0) scale(0.8); opacity: 0; }
+    10% { opacity: 1; }
+    40% { transform: translateX(50%) translateY(-10px) scale(1.1); }
+    45% { transform: translateX(55%) translateY(-10px) scale(1.2); } /* simulate fire breathing moment */
+    50% { transform: translateX(60%) translateY(0) scale(1.1); }
+    60% { transform: translateX(70%) translateY(-5px) scale(1); opacity: 1; }
+    100% { transform: translateX(100%) translateY(0) scale(0.8); opacity: 0; }
+  }
+  
+  /* Optional: Additional fire effect using pseudo-element */
+  .firedragon::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 100%;
+    width: 20px;
+    height: 10px;
+    background: radial-gradient(circle, #ff9900, #ff0000);
+    opacity: 0;
+    animation: breatheFire 3s infinite;
+  }
+  @keyframes breatheFire {
+    0%, 40%, 60%, 100% { opacity: 0; transform: translateX(0); }
+    50% { opacity: 1; transform: translateX(10px); }
+  }
+  
+  /* Modal Styles (if not already included) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-content {
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+  }
+  .close-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color);
+  }
+  

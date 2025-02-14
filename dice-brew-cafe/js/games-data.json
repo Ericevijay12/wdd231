@@ -1,0 +1,21 @@
+{
+    "games": [
+      { "id": "1", "title": "Settlers of Catan", "difficulty": "Medium", "duration": 90, "playerCount": "3-4" },
+      { "id": "2", "title": "Ticket to Ride", "difficulty": "Easy", "duration": 60, "playerCount": "2-5" },
+      { "id": "3", "title": "Pandemic", "difficulty": "Medium", "duration": 45, "playerCount": "2-4" },
+      { "id": "4", "title": "Carcassonne", "difficulty": "Easy", "duration": 35, "playerCount": "2-5" },
+      { "id": "5", "title": "Dominion", "difficulty": "Medium", "duration": 30, "playerCount": "2-4" },
+      { "id": "6", "title": "7 Wonders", "difficulty": "Medium", "duration": 30, "playerCount": "2-7" },
+      { "id": "7", "title": "Splendor", "difficulty": "Easy", "duration": 30, "playerCount": "2-4" },
+      { "id": "8", "title": "Codenames", "difficulty": "Easy", "duration": 15, "playerCount": "2-8" },
+      { "id": "9", "title": "Azul", "difficulty": "Easy", "duration": 30, "playerCount": "2-4" },
+      { "id": "10", "title": "Terraforming Mars", "difficulty": "Hard", "duration": 120, "playerCount": "1-5" },
+      { "id": "11", "title": "Scythe", "difficulty": "Hard", "duration": 90, "playerCount": "1-5" },
+      { "id": "12", "title": "Gloomhaven", "difficulty": "Hard", "duration": 120, "playerCount": "1-4" },
+      { "id": "13", "title": "Small World", "difficulty": "Easy", "duration": 40, "playerCount": "2-5" },
+      { "id": "14", "title": "Kingdomino", "difficulty": "Easy", "duration": 15, "playerCount": "2-4" },
+      { "id": "15", "title": "Ticket to Ride: Europe", "difficulty": "Medium", "duration": 60, "playerCount": "2-5" },
+      { "id": "16", "title": "Betrayal at House on the Hill", "difficulty": "Medium", "duration": 90, "playerCount": "3-6" }
+    ]
+  }
+  

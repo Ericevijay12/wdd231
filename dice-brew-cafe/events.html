@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dice & Brew Café | Events</title>
+  <meta name="description" content="View our interactive events calendar featuring board game nights, tournaments, workshops, and more with detailed times and dates.">
+  <link rel="icon" href="images/favicon.ico">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- FullCalendar CSS from CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <h1 class="logo">Dice & Brew Café</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="games.html" class="nav-link">Games Library</a></li>
+          <li><a href="events.html" class="nav-link active">Events</a></li>
+          <li><a href="reservations.html" class="nav-link">Reservations</a></li>
+          <li><a href="menu.html" class="nav-link">Menu</a></li>
+          <li><a href="about.html" class="nav-link">About & Contact</a></li>
+        </ul>
+      </nav>
+      <!-- Dark Mode Toggle -->
+      <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+    </div>
+  </header>
+  
+  <main class="container">
+    <!-- Featured Event Section -->
+    <section class="featured-event">
+      <h2>Featured Event</h2>
+      <div class="featured-event-card">
+        <!-- Using provided URL for the Featured Event Image -->
+        <img src="https://tabletopbellhop.com/wp-content/uploads/2021/09/Twitter_20190824_150810-scaled.jpg" alt="Featured Event Image">
+        <div class="featured-event-details">
+          <h3>Ultimate Board Game Marathon</h3>
+          <p>Join us for a day-long marathon featuring a mix of classic and new board games. Challenge your skills, meet fellow enthusiasts, and win exciting prizes!</p>
+          <p><strong>Date:</strong> March 30, 2025</p>
+          <p><strong>Time:</strong> 10:00 AM - 8:00 PM</p>
+          <a href="reservations.html" class="btn primary-btn">Reserve Your Spot</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FullCalendar Section -->
+    <section id="events-section">
+      <h2>Upcoming Events Calendar</h2>
+      <div id="calendar"></div>
+    </section>
+    
+    <!-- Dynamic List View of Upcoming Events -->
+    <section id="upcoming-events-list">
+      <h2>Event Details</h2>
+      <ul class="event-list">
+        <!-- This list will be populated dynamically via JavaScript -->
+      </ul>
+    </section>
+    
+    <!-- More Information Section -->
+    <section class="events-info">
+      <h2>More About Our Events</h2>
+      <p>At Dice & Brew Café, we host a variety of events to cater to all board game enthusiasts. Whether you're a seasoned strategist or new to board games, our events offer something for everyone. From weekly game nights and tournaments to special workshops and themed events, we provide a dynamic and engaging atmosphere. Stay tuned for updates and join our mailing list for the latest announcements and exclusive offers!</p>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Dice & Brew Café. All rights reserved.</p>
+      <p><a href="attributions.html">Attributions</a></p>
+    </div>
+  </footer>
+  
+  <!-- FullCalendar JS from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+  <!-- Main JavaScript file -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

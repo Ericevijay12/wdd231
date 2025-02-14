@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dice & Brew Café | Reservations</title>
+  <meta name="description" content="Book your table at Dice & Brew Café using our easy reservation form with real‑time validation." />
+  <link rel="icon" href="images/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <h1 class="logo">Dice & Brew Café</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="games.html" class="nav-link">Games Library</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="reservations.html" class="nav-link active">Reservations</a></li>
+          <li><a href="menu.html" class="nav-link">Menu</a></li>
+          <li><a href="about.html" class="nav-link">About &amp; Contact</a></li>
+          <li><a href="attributions.html" class="nav-link">Attributions</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+    </div>
+  </header>
+  
+  <main class="container">
+    <section id="reservation-section">
+      <h2>Make a Reservation</h2>
+      <form id="reservation-form">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required />
+        
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" required />
+        
+        <label for="time">Time:</label>
+        <input type="time" name="time" id="time" required />
+        
+        <label for="party-size">Party Size:</label>
+        <select name="party-size" id="party-size">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+        
+        <button type="submit" class="btn primary-btn">Reserve Now</button>
+      </form>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Dice & Brew Café. All rights reserved.</p>
+      <p><a href="attributions.html">Attributions</a></p>
+    </div>
+  </footer>
+  
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

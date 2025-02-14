@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dice & Brew Café | Games Library</title>
+    <meta name="description" content="Explore our dynamic games library featuring up to 40 board games with modern, stylized cards." />
+
+    <!-- Favicon and App Icons (files inside the images folder) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+    <link rel="manifest" href="images/site.webmanifest" />
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:title" content="Dice & Brew Café | Games Library" />
+    <meta property="og:description" content="Explore our dynamic games library featuring up to 40 board games with modern, stylized cards." />
+    <meta property="og:image" content="https://diceandbrewcafe.com/images/og-image.jpg" />
+    <meta property="og:url" content="https://diceandbrewcafe.com/games.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dice & Brew Café | Games Library" />
+    <meta name="twitter:description" content="Explore our dynamic games library featuring up to 40 board games with modern, stylized cards." />
+    <meta name="twitter:image" content="https://diceandbrewcafe.com/images/og-image.jpg" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background: rgba(0, 0, 0, 0.6);
+        align-items: center;
+        justify-content: center;
+      }
+      .modal-content {
+        background: var(--secondary-color);
+        padding: 1.5rem;
+        border-radius: 8px;
+        max-width: 600px;
+        margin: auto;
+        position: relative;
+      }
+      .close-button {
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--text-color);
+      }
+
+      /* Firedragon Animation */
+      .firedragon {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: url('images/firedragon.png') no-repeat center center;
+        background-size: contain;
+        margin: 1rem auto 0 auto;
+        animation: flyDragon 3s infinite;
+      }
+      @keyframes flyDragon {
+        0% { transform: translateX(-50%) translateY(0) scale(0.8); opacity: 0; }
+        10% { opacity: 1; }
+        40% { transform: translateX(50%) translateY(-10px) scale(1.1); }
+        45% { transform: translateX(55%) translateY(-10px) scale(1.2); }
+        50% { transform: translateX(60%) translateY(0) scale(1.1); }
+        60% { transform: translateX(70%) translateY(-5px) scale(1); opacity: 1; }
+        100% { transform: translateX(100%) translateY(0) scale(0.8); opacity: 0; }
+      }
+      .firedragon::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 100%;
+        width: 20px;
+        height: 10px;
+        background: radial-gradient(circle, #ff9900, #ff0000);
+        opacity: 0;
+        animation: breatheFire 3s infinite;
+      }
+      @keyframes breatheFire {
+        0%, 40%, 60%, 100% { opacity: 0; transform: translateX(0); }
+        50% { opacity: 1; transform: translateX(10px); }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <h1 class="logo">Dice & Brew Café</h1>
+        <nav>
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="games.html" class="nav-link active">Games Library</a></li>
+            <li><a href="events.html" class="nav-link">Events</a></li>
+            <li><a href="reservations.html" class="nav-link">Reservations</a></li>
+            <li><a href="menu.html" class="nav-link">Menu</a></li>
+            <li><a href="about.html" class="nav-link">About &amp; Contact</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+      </div>
+    </header>
+    
+    <main class="container">
+      <h2>Games Library</h2>
+      <div id="games-container" class="card-grid">
+        <!-- Dynamically generated game cards will appear here -->
+      </div>
+    </main>
+    
+    <div id="game-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+    
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Dice & Brew Café. All rights reserved.</p>
+        <p><a href="attributions.html">Attributions</a></p>
+      </div>
+    </footer>
+    
+    <script>
+      // Array of 40 unique game objects with unique names and details
+      const games = [
+        { id: 1, name: "Chess Masters", description: "A classic strategy game for lovers of deep tactics.", details: "Chess Masters challenges your strategic thinking in this timeless classic." },
+        { id: 2, name: "Monopoly Empire", description: "Build your fortune in this timeless property game.", details: "Monopoly Empire lets you dominate the real estate market and build an empire." },
+        { id: 3, name: "Codenames", description: "An exciting word game to challenge your wit and teamwork.", details: "Codenames is a fun and engaging word association game perfect for teams." },
+        { id: 4, name: "Ticket to Ride", description: "Embark on a railway adventure across continents.", details: "Ticket to Ride takes you on an exciting journey to build your rail empire." },
+        { id: 5, name: "Pandemic", description: "Work together to save the world from outbreaks.", details: "Pandemic is a cooperative game where players join forces to defeat diseases." },
+        { id: 6, name: "Carcassonne", description: "Build medieval landscapes and score points.", details: "Carcassonne is a tile-laying game where you construct a medieval landscape." },
+        { id: 7, name: "7 Wonders", description: "Develop your civilization and construct wonders.", details: "7 Wonders challenges you to build a civilization by developing technologies." },
+        { id: 8, name: "Splendor", description: "Acquire gems and develop trade routes.", details: "Splendor is a chip-collecting and card development game with a Renaissance theme." },
+        { id: 9, name: "Dominion", description: "Build your deck and conquer the strategy game.", details: "Dominion is a deck-building game where you expand your kingdom with powerful cards." },
+        { id: 10, name: "Terraforming Mars", description: "Develop Mars into a habitable planet.", details: "Terraforming Mars challenges you to make Mars habitable by managing resources." },
+        { id: 11, name: "Scythe", description: "Engage in strategic warfare in an alternate 1920s.", details: "Scythe is an engine-building game set in an alternate-history 1920s Europe." },
+        { id: 12, name: "Gloomhaven", description: "Experience an epic campaign in a unique fantasy world.", details: "Gloomhaven offers deep tactical combat and an evolving storyline in a fantasy world." },
+        { id: 13, name: "Azul", description: "Create beautiful mosaic patterns.", details: "Azul is an abstract strategy game where you draft tiles to create stunning patterns." },
+        { id: 14, name: "Catan Classic", description: "Trade, build, and settle in a modern classic.", details: "Catan Classic challenges you to build settlements and trade resources in a dynamic game world." },
+        { id: 15, name: "Agricola", description: "Develop your farm and manage resources.", details: "Agricola is a resource management game where you build and expand your farm." },
+        { id: 16, name: "Power Grid", description: "Bid for power plants and supply cities with energy.", details: "Power Grid is an economic game where you expand your energy network." },
+        { id: 17, name: "Euphoria", description: "Immerse in a futuristic narrative with strategic gameplay.", details: "Euphoria combines narrative and strategy in a futuristic setting." },
+        { id: 18, name: "Battlestar Galactica", description: "Survive the tensions of a space-faring civilization.", details: "Battlestar Galactica is a social deduction game set in space." },
+        { id: 19, name: "Twilight Struggle", description: "Experience the tension of the Cold War.", details: "Twilight Struggle is a card-driven strategy game simulating the Cold War." },
+        { id: 20, name: "Root", description: "A game of woodland might and right.", details: "Root is an asymmetrical war game set in a woodland realm with unique factions." },
+        { id: 21, name: "Tigris & Euphrates", description: "Develop civilizations along two great rivers.", details: "Tigris & Euphrates is a tile-placement game that challenges your civilization-building skills." },
+        { id: 22, name: "Risk", description: "Conquer the world with strategic military maneuvers.", details: "Risk is a classic game of global domination through strategic conflict." },
+        { id: 23, name: "Clue", description: "Solve the mystery of who did it, with what, and where.", details: "Clue is a detective game that challenges you to solve a murder mystery." },
+        { id: 24, name: "Mysterium", description: "Communicate with the ghost to solve a murder mystery.", details: "Mysterium is a cooperative game where one player gives clues as a ghost to help others solve a crime." },
+        { id: 25, name: "Sherlock Holmes", description: "Investigate and solve perplexing cases.", details: "Step into the shoes of Sherlock Holmes and unravel intricate mysteries." },
+        { id: 26, name: "Betrayal at House", description: "Explore a haunted house where alliances shift.", details: "Betrayal at House on the Hill is a suspenseful game where any player might turn traitor." },
+        { id: 27, name: "Munchkin", description: "A humorous dungeon crawl for treasure and laughs.", details: "Munchkin offers light-hearted fun with a satirical twist on dungeon adventures." },
+        { id: 28, name: "Cosmic Encounter", description: "Use alien powers to conquer the galaxy.", details: "Cosmic Encounter is a negotiation and strategy game with unique alien abilities." },
+        { id: 29, name: "Patchwork", description: "Craft the most aesthetic quilt.", details: "Patchwork is a two-player game where you draft patches to build the best quilt." },
+        { id: 30, name: "Sagrada", description: "Design a stained glass masterpiece with dice.", details: "Sagrada challenges you to create intricate patterns with colorful dice." },
+        { id: 31, name: "Keyflower", description: "Develop your village through bidding and strategy.", details: "Keyflower is a complex economic game with bidding and worker placement." },
+        { id: 32, name: "Stone Age", description: "Lead your tribe from the Paleolithic to civilization.", details: "Stone Age is a worker-placement game focusing on resource management." },
+        { id: 33, name: "Race for the Galaxy", description: "Build space empires with strategic card play.", details: "Race for the Galaxy is a card game where you construct an interstellar civilization." },
+        { id: 34, name: "Small World", description: "Conquer lands with diverse races.", details: "Small World features unique asymmetrical gameplay where different races battle for territory." },
+        { id: 35, name: "Rising Sun", description: "Engage in diplomacy and warfare in feudal Japan.", details: "Rising Sun blends area control and negotiation in an immersive setting." },
+        { id: 36, name: "Ticket to Ride: Europe", description: "Plan rail routes across Europe.", details: "Ticket to Ride: Europe challenges you to map out strategic train routes." },
+        { id: 37, name: "Tokaido", description: "Experience a serene journey along Japan's East Sea Road.", details: "Tokaido is a relaxing game about travel and cultural discovery." },
+        { id: 38, name: "Carcassonne: Hunters", description: "A prehistoric twist on a classic tile game.", details: "This variant of Carcassonne takes you back to the age of hunters and gatherers." },
+        { id: 39, name: "Viticulture", description: "Manage your vineyard from planting to harvest.", details: "Viticulture is a strategy game where you run your own winery." },
+        { id: 40, name: "Puerto Rico", description: "Develop your Caribbean colony with resource management.", details: "Puerto Rico is a classic game of colonial expansion and efficient resource use." }
+      ];
+      
+      const gamesContainer = document.getElementById('games-container');
+      
+      // Generate game cards dynamically without an image tag, but with a firedragon animation.
+      games.forEach(game => {
+        const card = document.createElement('article');
+        card.className = 'popular-game-card';
+        card.innerHTML = `
+          <h3>${game.name}</h3>
+          <p>${game.description}</p>
+          <div class="firedragon"></div>
+        `;
+        card.addEventListener('click', () => {
+          openGameModal(game);
+        });
+        gamesContainer.appendChild(card);
+      });
+      
+      // Modal Implementation for Game Details
+      let modal = document.getElementById('game-modal');
+      if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'game-modal';
+        modal.className = 'modal';
+        modal.innerHTML = `
+          <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modal-body"></div>
+          </div>
+        `;
+        document.body.appendChild(modal);
+      }
+      
+      function openGameModal(game) {
+        const modalBody = document.getElementById('modal-body');
+        modalBody.innerHTML = `
+          <h2>${game.name}</h2>
+          <p>${game.details}</p>
+        `;
+        modal.style.display = 'flex';
+      }
+      
+      modal.querySelector('.close-button').addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+      
+      window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    </script>
+    
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

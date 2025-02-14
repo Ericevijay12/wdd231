@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dice & Brew Café | Home</title>
+    <meta name="description" content="Dice & Brew Café is your local board game hub featuring weekly events, a dynamic games library, unique menu specials, and a cozy, modern atmosphere." />
+
+    <!-- Favicon and App Icons (files inside the images folder) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+    <link rel="manifest" href="images/site.webmanifest" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Dice & Brew Café" />
+    <meta property="og:description" content="Your local board game café with events, games, and a modern vibe!" />
+    <meta property="og:image" content="https://diceandbrewcafe.com/images/og-image.jpg" />
+    <meta property="og:url" content="https://diceandbrewcafe.com/index.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dice & Brew Café" />
+    <meta name="twitter:description" content="Your local board game café with events, games, and a modern vibe!" />
+    <meta name="twitter:image" content="https://diceandbrewcafe.com/images/og-image.jpg" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+      /* Hero Section using provided URL as Background */
+      .hero {
+        position: relative;
+        background: url('https://rts.org.uk/sites/default/files/styles/9_column_landscape/public/john_roder_1.png?itok=Te8XmJJR') no-repeat center center;
+        background-size: cover;
+        padding: 6rem 1rem;
+        color: #fff;
+        overflow: hidden;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 0;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      /* Footer Customization: Brown Background */
+      footer {
+        background: #8B4513;
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0;
+        margin-top: 2rem;
+      }
+
+      /* Glow Effect for Buttons in Dark Mode */
+      body.dark-mode .btn,
+      body.dark-mode .primary-btn {
+        box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+      }
+
+      /* Game of the Week Flip Card */
+      .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 400px;
+        perspective: 1000px;
+        margin: 0 auto;
+      }
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+      }
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .flip-card-front {
+        background: var(--secondary-color);
+        color: var(--text-color);
+      }
+      .flip-card-back {
+        background: var(--secondary-color);
+        color: var(--text-color);
+        transform: rotateY(180deg);
+      }
+
+      /* Firedragon Animation for Popular Games Cards */
+      .firedragon {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: url('images/firedragon.png') no-repeat center center;
+        background-size: contain;
+        margin: 1rem auto 0 auto;
+        animation: flyDragon 3s infinite;
+      }
+      @keyframes flyDragon {
+        0% {
+          transform: translateX(-50%) translateY(0) scale(0.8);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        40% {
+          transform: translateX(50%) translateY(-10px) scale(1.1);
+        }
+        45% {
+          transform: translateX(55%) translateY(-10px) scale(1.2);
+        }
+        50% {
+          transform: translateX(60%) translateY(0) scale(1.1);
+        }
+        60% {
+          transform: translateX(70%) translateY(-5px) scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(100%) translateY(0) scale(0.8);
+          opacity: 0;
+        }
+      }
+      .firedragon::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 100%;
+        width: 20px;
+        height: 10px;
+        background: radial-gradient(circle, #ff9900, #ff0000);
+        opacity: 0;
+        animation: breatheFire 3s infinite;
+      }
+      @keyframes breatheFire {
+        0%, 40%, 60%, 100% {
+          opacity: 0;
+          transform: translateX(0);
+        }
+        50% {
+          opacity: 1;
+          transform: translateX(10px);
+        }
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background: rgba(0, 0, 0, 0.6);
+        align-items: center;
+        justify-content: center;
+      }
+      .modal-content {
+        background: var(--secondary-color);
+        padding: 1.5rem;
+        border-radius: 8px;
+        max-width: 600px;
+        margin: auto;
+        position: relative;
+      }
+      .close-button {
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--text-color);
+      }
+
+      /* Additional Spacing */
+      .popular-games {
+        margin-bottom: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <h1 class="logo">Dice & Brew Café</h1>
+        <nav>
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="games.html" class="nav-link">Games Library</a></li>
+            <li><a href="events.html" class="nav-link">Events</a></li>
+            <li><a href="reservations.html" class="nav-link">Reservations</a></li>
+            <li><a href="menu.html" class="nav-link">Menu</a></li>
+            <li><a href="about.html" class="nav-link">About &amp; Contact</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+      </div>
+    </header>
+    
+    <main class="container">
+      <!-- Hero Section -->
+      <section class="hero" id="hero-section">
+        <div class="hero-content">
+          <h2>Welcome to Dice & Brew Café</h2>
+          <p>Your ultimate board game destination—enjoy weekly events, discover unique games, and savor our seasonal menu specials.</p>
+          <a href="reservations.html" class="btn primary-btn">Reserve Your Table</a>
+        </div>
+      </section>
+      
+      <!-- Featured Events Section -->
+      <section class="featured container">
+        <h2>Featured Events</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Weekly Game Night</h3>
+            <p>Join us every Friday for an exciting night of board game challenges!</p>
+          </article>
+          <article class="card">
+            <h3>Strategy Tournament</h3>
+            <p>Compete in our monthly tournaments and test your strategic prowess.</p>
+          </article>
+        </div>
+      </section>
+      
+      <!-- Game of the Week Section as Flip Card -->
+      <section class="game-highlight container">
+        <h2>Game of the Week</h2>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>Settlers of Catan</h3>
+              <p>Test your skills in trade and expansion.</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Settlers of Catan</h3>
+              <p>This classic strategy board game challenges you to trade, build settlements, and expand your influence on the island of Catan.</p>
+              <a href="games.html" class="btn primary-btn">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Popular Games Section -->
+      <section class="popular-games container">
+        <h2>Popular Games</h2>
+        <div class="card-grid">
+          <article class="popular-game-card">
+            <h3>Chess Masters</h3>
+            <p>A classic strategy game for lovers of deep tactics.</p>
+            <div class="firedragon"></div>
+          </article>
+          <article class="popular-game-card">
+            <h3>Monopoly Empire</h3>
+            <p>Build your fortune in this timeless property game.</p>
+            <div class="firedragon"></div>
+          </article>
+          <article class="popular-game-card">
+            <h3>Codenames</h3>
+            <p>An exciting word game to challenge your wit and teamwork.</p>
+            <div class="firedragon"></div>
+          </article>
+          <article class="popular-game-card">
+            <h3>Ticket to Ride</h3>
+            <p>Embark on a railway adventure across continents.</p>
+            <div class="firedragon"></div>
+          </article>
+        </div>
+      </section>
+      
+      <!-- New Feature Section 1: Global Community -->
+      <section class="global-community container">
+        <h2>Global Community</h2>
+        <p>Our café connects board game enthusiasts from around the world. Join our vibrant community and share your passion for strategy, creativity, and fun.</p>
+      </section>
+      
+      <!-- New Feature Section 2: International Board Games -->
+      <section class="international-games container">
+        <h2>International Board Games</h2>
+        <p>Discover games from across the globe that challenge your mind and broaden your horizons. We curate a diverse selection that celebrates international creativity.</p>
+      </section>
+      
+      <!-- New Feature Section 3: Worldwide Culinary Inspirations -->
+      <section class="global-flavors container">
+        <h2>Worldwide Culinary Inspirations</h2>
+        <p>Our menu is inspired by flavors from every corner of the world. Enjoy unique dishes and beverages that perfectly complement your board game experience.</p>
+      </section>
+      
+      <!-- Reviews Section -->
+      <section class="reviews container">
+        <h2>What Our Customers Say</h2>
+        <div class="review-cards">
+          <article class="review-card">
+            <blockquote>“Best board game café experience ever! Great games, food, and company!”</blockquote>
+            <p class="review-author">- Alex T.</p>
+          </article>
+          <article class="review-card">
+            <blockquote>“A fantastic place to meet new people and enjoy classics and new games alike.”</blockquote>
+            <p class="review-author">- Jamie R.</p>
+          </article>
+        </div>
+      </section>
+      
+      <!-- Seasonal Menu Specials Section -->
+      <section class="specials container">
+        <h2>Seasonal Menu Specials</h2>
+        <p>Experience our curated food and drink selections that change with the season.</p>
+      </section>
+    </main>
+    
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Dice & Brew Café. All rights reserved.</p>
+        <p><a href="attributions.html">Attributions</a></p>
+      </div>
+    </footer>
+    
+    <!-- Main JavaScript file -->
+    <script type="module" src="js/main.js"></script>
+    <script>
+      // GSAP Animations
+      gsap.from(".hero-content", { duration: 1.5, y: -50, opacity: 0, ease: "power2.out" });
+      gsap.from(".card", { duration: 1, y: 30, opacity: 0, stagger: 0.3, ease: "power2.out" });
+      gsap.from(".flip-card", { duration: 1, y: 30, opacity: 0, ease: "power2.out" });
+      gsap.from(".popular-game-card", { duration: 1, y: 50, opacity: 0, stagger: 0.2, ease: "power2.out" });
+      gsap.from(".review-card", { duration: 1, x: -50, opacity: 0, stagger: 0.3, ease: "power2.out" });
+    </script>
+  </body>
+</html>

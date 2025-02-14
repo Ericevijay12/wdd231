@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dice & Brew Café | Menu</title>
+  <meta name="description" content="Discover our delicious menu featuring a variety of food, drinks, and specialty brews. Filter by dietary preference with our interactive menu." />
+  <link rel="icon" href="images/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <h1 class="logo">Dice & Brew Café</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="games.html" class="nav-link">Games Library</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="reservations.html" class="nav-link">Reservations</a></li>
+          <li><a href="menu.html" class="nav-link active">Menu</a></li>
+          <li><a href="about.html" class="nav-link">About &amp; Contact</a></li>
+          <li><a href="attributions.html" class="nav-link">Attributions</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+    </div>
+  </header>
+  
+  <main class="container">
+    <section id="menu-section">
+      <h2>Our Menu</h2>
+      <div id="menu-filters" class="filter-buttons">
+        <button data-filter="all" class="filter-btn active">All</button>
+        <button data-filter="vegan" class="filter-btn">Vegan</button>
+        <button data-filter="drinks" class="filter-btn">Drinks</button>
+        <button data-filter="food" class="filter-btn">Food</button>
+      </div>
+      <div id="menu-items" class="card-grid">
+        <!-- Sample Menu Items -->
+        <article class="menu-item" data-category="food">
+          <h3>Classic Burger</h3>
+          <p>Juicy beef burger with fresh lettuce, tomato, and our secret sauce.</p>
+        </article>
+        <article class="menu-item" data-category="vegan">
+          <h3>Vegan Wrap</h3>
+          <p>Wholesome wrap with hummus, mixed greens, and a zesty dressing.</p>
+        </article>
+        <article class="menu-item" data-category="drinks">
+          <h3>Craft Beer</h3>
+          <p>Locally brewed beer with a crisp, refreshing finish.</p>
+        </article>
+        <article class="menu-item" data-category="food">
+          <h3>Loaded Nachos</h3>
+          <p>Crispy nachos loaded with cheese, salsa, and jalapeños.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Dice & Brew Café. All rights reserved.</p>
+      <p><a href="attributions.html">Attributions</a></p>
+    </div>
+  </footer>
+  
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
